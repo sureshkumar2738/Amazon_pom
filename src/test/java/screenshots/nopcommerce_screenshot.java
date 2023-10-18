@@ -27,6 +27,8 @@ public class nopcommerce_screenshot {
     
     driver = new ChromeDriver();
     
+    driver.manage().window().maximize();
+    
     driver.get(url);
     
     Thread.sleep(5000);
