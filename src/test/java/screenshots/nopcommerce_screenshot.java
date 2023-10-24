@@ -50,18 +50,12 @@ FileUtils.copyFile(screenshotFile, new File(path));
 
     }
     
-    public static String GetCurrentTimeStamp()
-    
-    {
+    public static String GetCurrentTimeStamp() {
     	
     	SimpleDateFormat sdfDate = new SimpleDateFormat("yyyy-MM-dd hh:mm:ss.SS");
-    	
     	Date now = new Date();
-    	
     	String strdate = sdfDate.format(now);
-    	
 		return strdate;
     	
     }
-    
 }
