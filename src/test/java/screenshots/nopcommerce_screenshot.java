@@ -40,10 +40,7 @@ public class nopcommerce_screenshot {
     
 	}
 
-
-    public static void screenshhot(String path) throws IOException
-
-    {
+    public static void screenshhot(String path) throws IOException {
 
 File screenshotFile = ((TakesScreenshot) driver).getScreenshotAs(OutputType.FILE);
 FileUtils.copyFile(screenshotFile, new File(path));
