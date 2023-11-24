@@ -31,7 +31,7 @@ public class wikipedia {
     
     System.out.println("total dropdownoptions = "+dropdownoptions.size());
     
-    System.out.println(dropdownoptions.get(6).getText());
+    System.out.println(dropdownoptions.get(16).getText());
     
     for(int i=0;i<dropdownoptions.size();i++) {
     	
