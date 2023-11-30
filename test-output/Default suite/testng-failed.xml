@@ -3,15 +3,13 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="TestCases_pom.HomePage_TestCases">
+      <class name="TestCases_pom.LoginPage_TestCases">
         <methods>
-          <include name="verifyaccountlisttest"/>
-          <include name="homepagevalidatepagetitletest"/>
-          <include name="setup"/>
-          <include name="homepagevalidatelogo"/>
+          <include name="dologin"/>
           <include name="teardown"/>
+          <include name="setup"/>
         </methods>
-      </class> <!-- TestCases_pom.HomePage_TestCases -->
+      </class> <!-- TestCases_pom.LoginPage_TestCases -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

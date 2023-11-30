@@ -2,6 +2,7 @@ package Pages_pom;
 
 import java.io.IOException;
 
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
@@ -21,13 +22,13 @@ public class LoginPage extends TestBase {
 	
 	@FindBy(xpath = "//input[@id='signInSubmit']")
 	WebElement lgnbtn;
-
+	
 	public LoginPage() throws IOException {
 		
 		PageFactory.initElements(driver, this);
 	}
 	
-	public HomePage dologin(String em,String pwd) throws IOException, InterruptedException {
+	public HomePage dologin(String em, String pwd) throws IOException, InterruptedException {
 		
 		txt_email.click();
 		txt_email.sendKeys(em);
