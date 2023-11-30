@@ -20,6 +20,7 @@ public class links_wikipedia {
 		WebDriverManager.chromedriver().setup();
 		
 		driver = new ChromeDriver();
+		driver.manage().window().maximize();
 		
 		driver.get(url);
 		
