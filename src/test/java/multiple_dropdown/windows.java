@@ -4,47 +4,56 @@ import java.util.Iterator;
 import java.util.Set;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
 
 public class windows {
 
 	public static WebDriver driver;
+	public static String url = "https://www.bankofbaroda.in/";
 	
 	public static void main(String[] args) throws InterruptedException {
 	
-     WebDriverManager.firefoxdriver().setup();
+     WebDriverManager.chromedriver().setup();
      
-     driver = new FirefoxDriver();
+     driver = new ChromeDriver();
+     driver.manage().window().maximize();
      
-     driver.get("https://www.bankofbaroda.in/");
-     
-     Thread.sleep(5000);
-     
-     Set<String> windid= driver.getWindowHandles();
-     
-     Iterator<String> myid = windid.iterator();
-     
-     driver.findElement(By.xpath("//section[@id='exclusiveOffers']//div[@class='socialFeedsInner']//div[@class='container']//ul[@class='socialFeedsList']//li//a[@class='btn insta'][contains(text(),'Instagram')]")).click();
-     
-     Thread.sleep(5000);
-     
-     windid = driver.getWindowHandles();
-     
-     myid = windid.iterator();
-     
-     String firstwindowid = myid.next();
-     
-     System.out.println("first windowid = "+firstwindowid);
-     
-     String secondwindowid = myid.next();
-     
-     System.out.println("second windowid = "+secondwindowid);
-    
-     driver.quit();
-     
+     try {
+    	 
+		driver.get(url);
+		 
+		 Thread.sleep(5000);
+		 
+		 Set<String> windid= driver.getWindowHandles();
+		 
+		 Iterator<String> myid = windid.iterator();
+		 
+		 JavascriptExecutor jse = (JavascriptExecutor) driver;
+			jse.executeScript("window.scrollBy(0,6000)");
+			
+		 driver.findElement(By.xpath("//*[@aria-label='Facebook']")).click();
+		 
+		 Thread.sleep(5000);
+		 
+		 windid = driver.getWindowHandles();
+		 
+		 myid = windid.iterator();
+		 
+		 String firstwindowid = myid.next();
+		 
+		 System.out.println("first windowid = "+firstwindowid);
+		 
+		 String secondwindowid = myid.next();
+		 
+		 System.out.println("second windowid = "+secondwindowid);
+	
+     } catch (InterruptedException e) {
+		
+		driver.quit();
+	}  
 	}
-
 }
